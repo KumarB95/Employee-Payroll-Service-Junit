@@ -72,4 +72,10 @@ public class EmployeePayrollService {
         if (ioService.equals(IOService.FILE_IO))
             new EmployeePayrollFileIOService().printData();
     }
+    /* This method is reading each line of EmployeePayrollData */
+    public long readEmployeePayrollData(IOService ioService){
+        if (ioService.equals(IOService.FILE_IO))
+            this.employeePayrollList = new EmployeePayrollFileIOService().readData();
+        return employeePayrollList.size();
+    }
 }
